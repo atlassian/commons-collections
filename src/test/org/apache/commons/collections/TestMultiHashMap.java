@@ -217,7 +217,7 @@ public class TestMultiHashMap extends AbstractTestMap {
         MultiHashMap one = new MultiHashMap();
         Integer value = new Integer(1);
         one.put("One", value);
-        one.remove("One", value);
+        one.removeCompat("One", value);
         
         MultiHashMap two = new MultiHashMap();
         assertEquals(two, one);
@@ -269,7 +269,7 @@ public class TestMultiHashMap extends AbstractTestMap {
         assertEquals(4, map.totalSize());
         map.remove("A");
         assertEquals(3, map.totalSize());
-        map.remove("B", "BC");
+        map.removeCompat("B", "BC");
         assertEquals(2, map.totalSize());
     }
     
@@ -292,7 +292,7 @@ public class TestMultiHashMap extends AbstractTestMap {
         map.remove("A");
         assertEquals(0, map.size("A"));
         assertEquals(3, map.size("B"));
-        map.remove("B", "BC");
+        map.removeCompat("B", "BC");
         assertEquals(0, map.size("A"));
         assertEquals(2, map.size("B"));
     }
@@ -464,11 +464,11 @@ public class TestMultiHashMap extends AbstractTestMap {
         map.put("A", "AA");
         map.put("A", "AB");
         map.put("A", "AC");
-        assertEquals(null, map.remove("C", "CA"));
-        assertEquals(null, map.remove("A", "AD"));
-        assertEquals("AC", map.remove("A", "AC"));
-        assertEquals("AB", map.remove("A", "AB"));
-        assertEquals("AA", map.remove("A", "AA"));
+        assertEquals(null, map.removeCompat("C", "CA"));
+        assertEquals(null, map.removeCompat("A", "AD"));
+        assertEquals("AC", map.removeCompat("A", "AC"));
+        assertEquals("AB", map.removeCompat("A", "AB"));
+        assertEquals("AA", map.removeCompat("A", "AA"));
         assertEquals(new MultiHashMap(), map);
     }
 

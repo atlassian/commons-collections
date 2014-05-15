@@ -160,7 +160,7 @@ public class TestMultiValueMap extends TestCase {
         MultiValueMap one = new MultiValueMap();
         Integer value = new Integer(1);
         one.put("One", value);
-        one.remove("One", value);
+        one.removeCompat("One", value);
         
         MultiValueMap two = new MultiValueMap();
         assertEquals(two, one);
@@ -186,7 +186,7 @@ public class TestMultiValueMap extends TestCase {
         assertEquals(4, map.totalSize());
         map.remove("A");
         assertEquals(3, map.totalSize());
-        map.remove("B", "BC");
+        map.removeCompat("B", "BC");
         assertEquals(2, map.totalSize());
     }
     
@@ -203,7 +203,7 @@ public class TestMultiValueMap extends TestCase {
         assertEquals(2, map.size());
         map.remove("A");
         assertEquals(2, map.size());
-        map.remove("B", "BC");
+        map.removeCompat("B", "BC");
         assertEquals(2, map.size());
     }
     
@@ -226,7 +226,7 @@ public class TestMultiValueMap extends TestCase {
         map.remove("A");
         assertEquals(0, map.size("A"));
         assertEquals(3, map.size("B"));
-        map.remove("B", "BC");
+        map.removeCompat("B", "BC");
         assertEquals(0, map.size("A"));
         assertEquals(2, map.size("B"));
     }
@@ -327,11 +327,11 @@ public class TestMultiValueMap extends TestCase {
         map.put("A", "AA");
         map.put("A", "AB");
         map.put("A", "AC");
-        assertEquals(null, map.remove("C", "CA"));
-        assertEquals(null, map.remove("A", "AD"));
-        assertEquals("AC", map.remove("A", "AC"));
-        assertEquals("AB", map.remove("A", "AB"));
-        assertEquals("AA", map.remove("A", "AA"));
+        assertEquals(null, map.removeCompat("C", "CA"));
+        assertEquals(null, map.removeCompat("A", "AD"));
+        assertEquals("AC", map.removeCompat("A", "AC"));
+        assertEquals("AB", map.removeCompat("A", "AB"));
+        assertEquals("AA", map.removeCompat("A", "AA"));
         assertEquals(new MultiValueMap(), map);
     }
 

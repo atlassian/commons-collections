@@ -153,7 +153,7 @@ public class MultiValueMap extends AbstractMapDecorator implements MultiMap {
      * @param value the value to remove
      * @return the value removed (which was passed in), null if nothing removed
      */
-    public Object remove(Object key, Object value) {
+    public Object removeCompat(Object key, Object value) {
         Collection valuesForKey = getCollection(key);
         if (valuesForKey == null) {
             return null;
