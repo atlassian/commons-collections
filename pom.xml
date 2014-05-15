@@ -41,8 +41,8 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:git:ssh://git@github.com:atlassian/commons-collections.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:atlassian/commons-collections.git</developerConnection>
+    <connection>scm:git:git@github.com:atlassian/commons-collections.git</connection>
+    <developerConnection>scm:git:git@github.com:atlassian/commons-collections.git</developerConnection>
     <url>https://github.com/atlassian/commons-collections</url>
   </scm>
 
