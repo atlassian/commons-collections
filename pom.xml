@@ -20,9 +20,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-parent</artifactId>
-    <version>9</version>
+    <groupId>com.atlassian.pom</groupId>
+    <artifactId>public-pom</artifactId>
+    <version>3.0.11</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>commons-collections</groupId>
@@ -41,9 +41,9 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/collections/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/collections/trunk</developerConnection>
-    <url>http://svn.apache.org/viewvc/commons/proper/collections/trunk</url>
+    <connection>scm:git:ssh://git@github.com:atlassian/commons-collections.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:atlassian/commons-collections.git</developerConnection>
+    <url>https://github.com/atlassian/commons-collections</url>
   </scm>
 
   <developers>
