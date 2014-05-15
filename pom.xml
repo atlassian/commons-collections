@@ -24,7 +24,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>commons-collections</groupId>
   <artifactId>commons-collections</artifactId>
-  <version>3.2.1-atlassian-01</version>
+  <version>3.2.1-atlassian-02-SNAPSHOT</version>
   <name>Commons Collections</name>
 
   <inceptionYear>2001</inceptionYear>
@@ -41,7 +41,7 @@
     <connection>scm:git:git@github.com:atlassian/commons-collections.git</connection>
     <developerConnection>scm:git:git@github.com:atlassian/commons-collections.git</developerConnection>
     <url>https://github.com/atlassian/commons-collections</url>
-    <tag>commons-collections-3.2.1-atlassian-01</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
