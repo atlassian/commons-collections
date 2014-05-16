@@ -27,6 +27,14 @@
   <version>3.2.1-atlassian-01</version>
   <name>Commons Collections</name>
 
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
   <inceptionYear>2001</inceptionYear>
   <description>Types that extend and augment the Java Collections Framework.</description>
 
@@ -436,7 +444,48 @@
             <tarLongFileMode>gnu</tarLongFileMode>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.6</version>
+          <executions>
+            <execution>
+              <id>copy-license</id>
+              <phase>process-sources</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
+                <overwrite>true</overwrite>
+                <resources>
+                  <resource>
+                    <directory>${user.dir}</directory>
+                    <includes>
+                      <include>LICENSE.txt</include>
+                      <include>NOTICE.txt</include>
+                      <include>license.txt</include>
+                      <include>notice.txt</include>
+                    </includes>
+                    <filtering>true</filtering>
+                  </resource>
+                </resources>
+              </configuration>
+            </execution>
+          </executions>  
+        </plugin>
       </plugins>
     </build>
+
+  <distributionManagement>
+    <repository>
+      <id>atlassian-3rdparty</id>
+      <url>https://maven.atlassian.com/3rdparty</url>
+    </repository>
+    <snapshotRepository>
+      <id>atlassian-3rdparty-snapshot</id>
+      <url>https://maven.atlassian.com/3rdparty-snapshot</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
